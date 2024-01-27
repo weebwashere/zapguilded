@@ -1,15 +1,38 @@
 'use client';
 
 import { Button, Group, useMantineColorScheme } from '@mantine/core';
+import { IconExternalLink } from '@tabler/icons-react';
 
 export function ColorSchemeToggle() {
   const { setColorScheme } = useMantineColorScheme();
+  const icon = <IconExternalLink size={14} />;
 
   return (
-    <Group justify="center" mt="xl">
-      <Button onClick={() => setColorScheme('light')}>Light</Button>
-      <Button onClick={() => setColorScheme('dark')}>Dark</Button>
-      <Button onClick={() => setColorScheme('auto')}>Auto</Button>
+    <Group justify="left" mt="xl" ml={50}>
+      <Button 
+        justify="center" 
+        component="a"
+        href="https://www.guilded.gg/b/2e702266-2dfe-4796-b61c-ccbb0536444c"
+        size='lg' 
+        rightSection={icon} 
+        variant="outline" 
+        color="#FFFF00" 
+        mt="md"
+      >
+        Invite Zap
+      </Button>
+      <Button 
+        justify="center" 
+        component="a"
+        href="https://www.guilded.gg/i/knxezNqE"
+        size='lg' 
+        rightSection={icon} 
+        variant="outline" 
+        color="#FFFF00" 
+        mt="md"
+      >
+        Support Server
+      </Button>
     </Group>
   );
 }
