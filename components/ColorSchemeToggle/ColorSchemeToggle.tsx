@@ -15,8 +15,7 @@ export function ColorSchemeToggle() {
         href="https://www.guilded.gg/b/2e702266-2dfe-4796-b61c-ccbb0536444c"
         size='lg' 
         rightSection={icon} 
-        variant="outline" 
-        color="#FFFF00" 
+        variant="default" 
         mt="md"
       >
         Invite Zap
@@ -27,8 +26,7 @@ export function ColorSchemeToggle() {
         href="https://www.guilded.gg/i/knxezNqE"
         size='lg' 
         rightSection={icon} 
-        variant="outline" 
-        color="#FFFF00" 
+        variant="default" 
         mt="md"
       >
         Support Server
