@@ -20,12 +20,14 @@ import {
   useComputedColorScheme,
   useMantineColorScheme
 } from '@mantine/core';
+
 import classes from './Welcome.module.css';
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
 import classes1 from './MobileNavbar.module.css';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 export function Welcome() {
+  // Hook to control the color scheme
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light');
   const toggleColorScheme = () => {
@@ -48,6 +50,7 @@ export function Welcome() {
               <Button className={classes1.control} component='a' variant="default" href='#'>Home</Button>
               <Button className={classes1.control} component='a' variant='default' href='https://www.guilded.gg/b/2e702266-2dfe-4796-b61c-ccbb0536444c'>Invite</Button>
               <Button className={classes1.control} component='a' variant='default' href='https://guilded.gg/i/knxezNqE'>Support</Button>
+              <Button className={classes1.control} component='a' variant='default' href='https://twitter.com/zapguilded'>Twitter</Button>
               <Button size='sm' variant='default' mb={25} onClick={toggleColorScheme}>
                 {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
               </Button>
