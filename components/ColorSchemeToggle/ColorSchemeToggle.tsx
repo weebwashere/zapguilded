@@ -109,7 +109,7 @@ export function ColorSchemeToggle() {
         </Grid>
       </div>
 
-      <Container size="sm" mt="240" className={classes2.wrapper}>
+      <Container size="sm" mt="140" className={classes2.wrapper}>
         <Title ta="center" className={classes2.title}>
           Frequently Asked Questions
         </Title>
