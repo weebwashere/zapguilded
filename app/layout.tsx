@@ -2,6 +2,7 @@ import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript, AppShell } from '@mantine/core';
 import { theme } from '../theme';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
   title: 'Zap | Guilded Multipurpose Bot',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>{children}</MantineProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
