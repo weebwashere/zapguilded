@@ -3,6 +3,7 @@ import React from 'react';
 import { MantineProvider, ColorSchemeScript, AppShell } from '@mantine/core';
 import { theme } from '../theme';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { WavyBackground } from "../components/ui/wavy-background";
 
 export const metadata = {
   title: 'Zap | Guilded Multipurpose Bot',
