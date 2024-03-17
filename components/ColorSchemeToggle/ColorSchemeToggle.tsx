@@ -11,7 +11,7 @@ export function ColorSchemeToggle() {
 
   return (
     <>
-      <Group justify="left" mt="xl" ml={50}>
+      <Group justify="center" mt="xl" >
         <Button
           justify="center"
           component="a"

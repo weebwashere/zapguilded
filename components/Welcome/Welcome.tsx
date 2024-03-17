@@ -63,7 +63,7 @@ export function Welcome() {
           </Group>
         </AppShell.Header>
       </AppShell>
-      <Title className={classes.title} ta="left" mt={105}>
+      <Title className={classes.title} ta="center" mr={50}  mt={160}>
         Hello! I'm{' '}
         <Text
           inherit
@@ -74,10 +74,12 @@ export function Welcome() {
           Zap
         </Text>
       </Title>
-      <Text className={classes.textLeft} c="dimmed" ta="left" size="lg" maw={580} mt="xl">
+      <Group justify='center'>
+      <Text className={classes.textLeft} c="dimmed" ta="center" mr={60} size="lg" maw={580}  mt="xl">
         Zap, the ultimate multipurpose bot for safe and engaging online communities. This bot includes moderation,
         reminders, and a lot more!{' '}
       </Text>
+      </Group>
       <Affix position={{ bottom: 20, right: 20 }}>
         <Transition transition="slide-up" mounted={scroll.y > 0}>
           {(transitionStyles) => (
