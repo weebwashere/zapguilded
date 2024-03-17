@@ -4924,6 +4924,13 @@ form-data@^4.0.0:
 forwarded@0.2.0:
   version "0.2.0"
 
+framer-motion@^11.0.14:
+  version "11.0.14"
+  resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-11.0.14.tgz"
+  integrity sha512-RFjo2hB1MTW0EWsHQaXgVn0AEUDGxAs0ZL2vVjTTJJu3N7wFiLkmqTn5ysLjL+qKZ9jvfpKXDb9waN9AyLqk8g==
+  dependencies:
+    tslib "^2.4.0"
+
 fresh@0.5.2:
   version "0.5.2"
 
@@ -6328,6 +6335,11 @@ mimic-fn@^2.1.0:
 
 min-indent@^1.0.0, min-indent@^1.0.1:
   version "1.0.1"
+
+mini-svg-data-uri@^1.4.4:
+  version "1.4.4"
+  resolved "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz"
+  integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"

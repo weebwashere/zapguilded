@@ -24,7 +24,6 @@ import {
 } from '@mantine/core';
 
 import classes from './Welcome.module.css';
-import { WavyBackground } from "../ui/wavy-background";
 import { useWindowScroll } from '@mantine/hooks';
 import { IconArrowUp } from '@tabler/icons-react';
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';

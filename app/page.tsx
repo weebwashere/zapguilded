@@ -3,7 +3,6 @@ import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeTo
 import { AppShell } from '@mantine/core';
 import classes from './Welcome.module.css';
 import { IconPhoto } from '@tabler/icons-react';
-import { WavyBackground } from "../components/ui/wavy-background";
 
 export default function HomePage() {
   return (
