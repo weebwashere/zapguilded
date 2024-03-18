@@ -31,7 +31,23 @@ const mockdata = [
   },
 ];
 
-
+const data = [
+  {
+    title: 'Page views',
+    stats: '456,133',
+    description: '24% more than in the same month last year, 33% more that two years ago',
+  },
+  {
+    title: 'New users',
+    stats: '2,175',
+    description: '13% less compared to last month, new user engagement up by 6%',
+  },
+  {
+    title: 'Completed orders',
+    stats: '1,994',
+    description: '1994 orders were completed this month, 97% satisfaction rate',
+  },
+];
 
 
 export function ColorSchemeToggle() {
@@ -89,7 +105,7 @@ export function ColorSchemeToggle() {
           {features}
         </SimpleGrid>
       </Container>
-      <Container size="sm" mt="240" mb={70} className={classes.wrapper}>
+      <Container size="sm" mt="210" mb={70} className={classes.wrapper}>
         <Title ta="center" className={classes.title}>
           Frequently Asked Questions
         </Title>
