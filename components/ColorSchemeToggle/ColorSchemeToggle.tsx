@@ -1,13 +1,59 @@
 'use client';
 
 import React from 'react';
-import { Button, Group, useMantineColorScheme, Accordion, Container, Title, Code } from '@mantine/core';
-import { IconExternalLink } from '@tabler/icons-react';
+import { Button, Group, useMantineColorScheme, Accordion, Container, Title, Code, useMantineTheme, Card, rem, Text, Badge, SimpleGrid } from '@mantine/core';
+import { IconExternalLink, IconGauge, IconUser, IconCookie, IconClock, IconMoodSmileBeam, IconInfoCircle} from '@tabler/icons-react';
 import classes from './FaqSimple.module.css';
+import classes1 from './FeaturesCards.module.css';
+const mockdata = [
+  {
+    title: 'Utility',
+    description:
+      "Zap's utility commands are designed to provide users with quick access to informational content, or info based on your server.",
+    icon: IconInfoCircle,
+  },
+  {
+    title: 'Reminders',
+    description:
+      "Zap's reminder system allows users to create, view, and remove reminders conveniently.",
+    icon: IconClock,
+  },
+  {
+    title: 'Fun',
+    description:
+      "Zap's fun commands are designed to provide users with entertaining and lighthearted experiences.",
+    icon: IconMoodSmileBeam,
+  },
+  {
+    title: 'Anime',
+    description: "Users can use Zap’s anime commands to get information on there favourite anime’s and manga, as well as generate waifu, neko, and maid images.",
+    icon: IconCookie,
+  },
+];
+
+
+
 
 export function ColorSchemeToggle() {
   const { setColorScheme } = useMantineColorScheme();
+  const theme = useMantineTheme();
   const icon = <IconExternalLink size={14} />;
+  
+  const features = mockdata.map((feature) => (
+    <Card key={feature.title} shadow="md" radius="md" className={classes1.card} padding="xl">
+      <feature.icon
+        style={{ width: rem(50), height: rem(50) }}
+        stroke={2}
+        color="#FFFF00"
+      />
+      <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+        {feature.title}
+      </Text>
+      <Text fz="sm" c="dimmed" mt="sm">
+        {feature.description}
+      </Text>
+    </Card>
+  ));
 
   return (
     <>
@@ -35,7 +81,15 @@ export function ColorSchemeToggle() {
           Support Server
         </Button>
       </Group>
-      <Container size="sm" mt="240" className={classes.wrapper}>
+      <Container size="lg" mt={200} py="xl">
+        <Title order={2} className={classes1.title} ta="center" mt="sm">
+          Features 👇
+        </Title>
+        <SimpleGrid cols={{ base: 2, md: 2 }} spacing="xl" mt={50}>
+          {features}
+        </SimpleGrid>
+      </Container>
+      <Container size="sm" mt="240" mb={70} className={classes.wrapper}>
         <Title ta="center" className={classes.title}>
           Frequently Asked Questions
         </Title>
