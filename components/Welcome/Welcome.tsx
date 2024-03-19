@@ -60,7 +60,7 @@ export function Welcome() {
       onClick: () => {
         window.location.href = 'https://twitter.com/zapguilded'
       },
-      leftSection: <FaXTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+      leftSection: <FaXTwitter style={{ width: rem(24), height: rem(24) }}  />,
     },
     {
       id: 'guilded',
@@ -69,7 +69,7 @@ export function Welcome() {
       onClick: () => {
         window.location.href = 'https://guilded.gg/zapguilded'
       },
-      leftSection: <FaGuilded style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+      leftSection: <FaGuilded style={{ width: rem(24), height: rem(24) }}  />,
     },
     {
       id: 'bot-invite',
@@ -78,7 +78,7 @@ export function Welcome() {
       onClick: () => {
         window.location.href = 'https://www.guilded.gg/b/2e702266-2dfe-4796-b61c-ccbb0536444c'
       },
-      leftSection: <FaLink style={{ width: rem(20), height: rem(20) }} stroke={1.5} />,
+      leftSection: <FaLink style={{ width: rem(20), height: rem(20) }}  />,
     },
   ];
 
