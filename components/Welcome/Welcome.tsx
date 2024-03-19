@@ -41,7 +41,7 @@ import { IoSunny } from "react-icons/io5";
 import { FaInfoCircle } from 'react-icons/fa';
 const icon = <IconSearch size={14} />
 
-export function Welcome({ opened }: { opened: boolean }) {
+export function Welcome() {
   // Hook to control the color 
   const theme = useMantineTheme();
   const [scroll, scrollTo] = useWindowScroll();
