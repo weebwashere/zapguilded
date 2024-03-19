@@ -105,7 +105,7 @@ export function ColorSchemeToggle() {
           {features}
         </SimpleGrid>
       </Container>
-      <Container size="sm" mt="210" mb={70} className={classes.wrapper}>
+      <Container size="sm" mt={210} className={classes.wrapper}>
         <Title ta="center" className={classes.title}>
           Frequently Asked Questions
         </Title>

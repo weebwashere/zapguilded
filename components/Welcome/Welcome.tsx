@@ -22,23 +22,26 @@ import {
   Affix,
   Transition,
   BackgroundImage,
-  Switch
+  Switch,
+  AppShellHeader,
+  ActionIcon
 } from '@mantine/core';
 
 import { Spotlight, SpotlightActionData, spotlight } from '@mantine/spotlight';
+import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './Welcome.module.css';
 import { useWindowScroll } from '@mantine/hooks';
 import { IconArrowUp, IconHome, IconDashboard, IconFileText, IconSearch, IconSun, IconMoonStars } from '@tabler/icons-react';
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
 import classes1 from './MobileNavbar.module.css';
 import '@mantine/spotlight/styles.css';
-import { FaSun, FaMoon } from 'react-icons/fa6';
+import { FaSun, FaMoon, FaGuilded, FaLink } from 'react-icons/fa6';
 import { FaXTwitter } from "react-icons/fa6";
 import { IoSunny } from "react-icons/io5";
 import { FaInfoCircle } from 'react-icons/fa';
 const icon = <IconSearch size={14} />
 
-export function Welcome() {
+export function Welcome({ opened }: { opened: boolean }) {
   // Hook to control the color 
   const theme = useMantineTheme();
   const [scroll, scrollTo] = useWindowScroll();
@@ -50,23 +53,33 @@ export function Welcome() {
 
   const actions: SpotlightActionData[] = [
     {
-      id: 'about',
-      label: 'About',
-      description: 'Go to the about page.',
-      onClick: () => {
-        window.location.href = '/about';
-      },
-      leftSection: <FaInfoCircle style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
-    },
-    {
+      group: 'Socials',
       id: 'twitter',
-      label: 'Twitter',
-      description: "Visit Zap's twitter page.",
+      label: 'X',
+      description: "Visit Zap's Twitter/X page.",
       onClick: () => {
         window.location.href = 'https://twitter.com/zapguilded'
       },
       leftSection: <FaXTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
-    }
+    },
+    {
+      id: 'guilded',
+      label: 'Guilded',
+      description: "Visit Zap's guilded support server.",
+      onClick: () => {
+        window.location.href = 'https://guilded.gg/zapguilded'
+      },
+      leftSection: <FaGuilded style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+    },
+    {
+      id: 'bot-invite',
+      label: 'Bot Invite',
+      description: 'Invite Zap to your server.',
+      onClick: () => {
+        window.location.href = 'https://www.guilded.gg/b/2e702266-2dfe-4796-b61c-ccbb0536444c'
+      },
+      leftSection: <FaLink style={{ width: rem(20), height: rem(20) }} stroke={1.5} />,
+    },
   ];
 
   return (
@@ -81,7 +94,9 @@ export function Welcome() {
               w={70}
               src="https://cdn.gilcdn.com/WebhookThumbnail/d56373e64d7ffcc3a9cd6871c6dc064d-Full.webp?w=160&h=160"
             />
+            
             <Group ml="xl" gap={9} visibleFrom="sm" mr={40}>
+              
               <>
                 <Button
                   data-disabled
@@ -125,6 +140,7 @@ export function Welcome() {
           component="span"
           gradient={{ from: '#FFFF00', to: '#FFFF00' }}
         >
+          
           Zap
         </Text>
       </Title>
