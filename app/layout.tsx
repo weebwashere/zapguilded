@@ -1,5 +1,6 @@
 import '@mantine/core/styles.css';
 import React from 'react';
+import { Notifications } from '@mantine/notifications';
 import { MantineProvider, ColorSchemeScript, AppShell } from '@mantine/core';
 import { theme } from '../theme';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -21,7 +22,9 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider defaultColorScheme='dark' theme={theme}>{children}</MantineProvider>
+        <MantineProvider defaultColorScheme='dark' theme={theme}>{children}
+          <Notifications />
+        </MantineProvider>
         <SpeedInsights />
       </body>
     </html>
