@@ -35,6 +35,7 @@ import '@mantine/spotlight/styles.css';
 import { FaSun, FaMoon } from 'react-icons/fa6';
 import { FaXTwitter } from "react-icons/fa6";
 import { IoSunny } from "react-icons/io5";
+import { FaInfoCircle } from 'react-icons/fa';
 const icon = <IconSearch size={14} />
 
 export function Welcome() {
@@ -47,32 +48,25 @@ export function Welcome() {
     setColorScheme(computedColorScheme === "dark" ? 'light' : 'dark');
   }
 
-  const sunIcon = (
-    <IconSun
-      style={{ width: rem(16), height: rem(16) }}
-      stroke={2.5}
-      color={theme.colors.yellow[4]}
-    />
-  );
-
-  const moonIcon = (
-    <IconMoonStars
-      style={{ width: rem(16), height: rem(16) }}
-      stroke={2.5}
-      color={theme.colors.blue[6]}
-    />
-  );
-
   const actions: SpotlightActionData[] = [
     {
       id: 'about',
       label: 'About',
-      description: 'Get to the about page',
+      description: 'Go to the about page.',
       onClick: () => {
         window.location.href = '/about';
       },
-      leftSection: <IconHome style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+      leftSection: <FaInfoCircle style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
     },
+    {
+      id: 'twitter',
+      label: 'Twitter',
+      description: "Visit Zap's twitter page.",
+      onClick: () => {
+        window.location.href = 'https://twitter.com/zapguilded'
+      },
+      leftSection: <FaXTwitter style={{ width: rem(24), height: rem(24) }} stroke={1.5} />,
+    }
   ];
 
   return (
@@ -109,7 +103,7 @@ export function Welcome() {
                   }}
                 />
               </>
-              <Switch
+              <Button
                 className={classes1.control}
                 size='sm'
                 variant='default'
@@ -118,7 +112,7 @@ export function Welcome() {
                 onClick={toggleColorScheme}
               >
                 {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
-              </Switch>
+              </Button>
             </Group>
           </Group>
         </AppShell.Header>
