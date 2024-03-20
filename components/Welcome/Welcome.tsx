@@ -24,10 +24,14 @@ import {
   BackgroundImage,
   Switch,
   AppShellHeader,
-  ActionIcon
+  ActionIcon,
+  Avatar,
+  Modal,
+  Code
 } from '@mantine/core';
 
 import { Spotlight, SpotlightActionData, spotlight } from '@mantine/spotlight';
+import { useDisclosure } from '@mantine/hooks';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './Welcome.module.css';
 import { useWindowScroll } from '@mantine/hooks';
@@ -35,14 +39,15 @@ import { IconArrowUp, IconHome, IconDashboard, IconFileText, IconSearch, IconSun
 import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
 import classes1 from './MobileNavbar.module.css';
 import '@mantine/spotlight/styles.css';
-import { FaSun, FaMoon, FaGuilded, FaLink } from 'react-icons/fa6';
-import { FaXTwitter } from "react-icons/fa6";
+import { FaSun, FaMoon, FaGuilded, FaLink } from 'react-icons/fa';
+import { FaNewspaper, FaXTwitter } from "react-icons/fa6";
 import { IoSunny } from "react-icons/io5";
 import { FaInfoCircle } from 'react-icons/fa';
 const icon = <IconSearch size={14} />
 
 export function Welcome() {
   // Hook to control the color 
+  const [opened, { open, close }] = useDisclosure(false);
   const theme = useMantineTheme();
   const [scroll, scrollTo] = useWindowScroll();
   const { setColorScheme } = useMantineColorScheme();
@@ -80,10 +85,61 @@ export function Welcome() {
       },
       leftSection: <FaLink style={{ width: rem(20), height: rem(20) }}  />,
     },
-  ];
+      {
+        group: 'News',
+        id: 'news',
+        label: 'Changelog',
+        description: 'Check any new information based on Zap.',
+        onClick: open,
+        leftSection: (
+          <>
+            <FaNewspaper style={{ width: rem(24), height: rem(24) }} />
+          </>
+        ),
+        rightSection: (
+          <Badge variant="default">new</Badge>
+        ),
+      },
+    ];
+
+  
 
   return (
     <MantineProvider defaultColorScheme="dark">
+      <>
+        <Modal opened={opened} onClose={close} withCloseButton={false}>
+          <Title size='h2' mb={50} >
+            Changelog 2.0 ℹ️
+            <Text>
+              Alot of amazing features, has been added along with a bunch of fun-tastic commands!
+            </Text>
+          </Title>
+          <Title size='h2' >
+             Fun 😊
+          </Title>
+          <Text>
+          Added new commands:
+          </Text>
+          <Text>
+            <Code>cowsay</Code>
+          </Text>
+          <Text>
+            <Code>meme</Code>
+          </Text>
+          <Text>
+            <Code>antimeme</Code>
+          </Text>
+          <Text>
+            <Code>wholesomememe</Code>
+          </Text>
+          <Text>
+            <Code>wyr(wouldyourather)</Code>
+          </Text>
+          <Text>
+            <Code>story</Code>
+          </Text>
+        </Modal>
+      </>
       <AppShell header={{ height: 70 }} padding="md">
         <AppShell.Header>
           <Group justify="space-between" style={{ flex: 1 }}>
@@ -119,15 +175,17 @@ export function Welcome() {
                 />
               </>
               <Button
-                className={classes1.control}
+              className={classes1.control}
                 size='sm'
                 variant='default'
                 component='a'
                 mb={25}
                 onClick={toggleColorScheme}
+                radius='md'
               >
                 {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
               </Button>
+                
             </Group>
           </Group>
         </AppShell.Header>
