@@ -84,21 +84,6 @@ export function Welcome() {
         window.location.href = 'https://www.guilded.gg/b/2e702266-2dfe-4796-b61c-ccbb0536444c'
       },
       leftSection: <FaLink style={{ width: rem(20), height: rem(20) }}  />,
-    },
-      {
-        group: 'News',
-        id: 'news',
-        label: 'Changelog',
-        description: 'Check any new information based on Zap.',
-        onClick: open,
-        leftSection: (
-          <>
-            <FaNewspaper style={{ width: rem(24), height: rem(24) }} />
-          </>
-        ),
-        rightSection: (
-          <Badge variant="default">new</Badge>
-        ),
       },
     ];
 
@@ -106,40 +91,6 @@ export function Welcome() {
 
   return (
     <MantineProvider defaultColorScheme="dark">
-      <>
-        <Modal opened={opened} onClose={close} withCloseButton={false}>
-          <Title size='h2' mb={50} >
-            Changelog 2.0 ℹ️
-            <Text>
-              Alot of amazing features, has been added along with a bunch of fun-tastic commands!
-            </Text>
-          </Title>
-          <Title size='h2' >
-             Fun 😊
-          </Title>
-          <Text>
-          Added new commands:
-          </Text>
-          <Text>
-            <Code>cowsay</Code>
-          </Text>
-          <Text>
-            <Code>meme</Code>
-          </Text>
-          <Text>
-            <Code>antimeme</Code>
-          </Text>
-          <Text>
-            <Code>wholesomememe</Code>
-          </Text>
-          <Text>
-            <Code>wyr(wouldyourather)</Code>
-          </Text>
-          <Text>
-            <Code>story</Code>
-          </Text>
-        </Modal>
-      </>
       <AppShell header={{ height: 70 }} padding="md">
         <AppShell.Header>
           <Group justify="space-between" style={{ flex: 1 }}>
