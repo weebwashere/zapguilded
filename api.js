@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'website')));
 
-app.get('/api/animememes', async (req, res) => {
+app.get('api/animememes', async (req, res) => {
   try {
     const response = await axios.get('https://meme-api.com/gimme/animememes');
     const { postLink, subreddit, title, url, author, ups } = response.data;
@@ -20,7 +20,7 @@ app.get('/api/animememes', async (req, res) => {
   }
 });
 
-app.get('/api/meme', async (req, res) => {
+app.get('api/meme', async (req, res) => {
   try {
     const response = await axios.get('https://meme-api.com/gimme/memes');
     const { postLink, subreddit, title, url, author, ups } = response.data;
