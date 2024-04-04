@@ -118,7 +118,7 @@ export function ColorSchemeToggle() {
 
           <Accordion.Item className={classes.item} value="another-account">
             <Accordion.Control>Who created Zap?</Accordion.Control>
-            <Accordion.Panel>Zap was created by A guilded bot developer named "weebwashere", i don't know who he is but he sounds like a nice person. </Accordion.Panel>
+            <Accordion.Panel>Zap was created by a Guilded bot developer named "weebwashere", I don't know who he is but he sounds like a nice person. </Accordion.Panel>
           </Accordion.Item>
         </Accordion>
       </Container>
